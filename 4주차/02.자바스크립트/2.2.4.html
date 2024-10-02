@@ -1,0 +1,22 @@
+<!--데이터 속성과 dataset - 데이터를 저장하는 공식적인 방법-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dataset</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>dataset</h1>
+    <ul>
+        <li data-id="1" data-user-job="programmer">Zero</li>
+    </ul>
+    <script>
+        console.log(document.querySelector('li').dataset);
+    </script>
+</body>
+</html>
+
+<!--데이터들이 서버에 요청을 보냄: 'data-'-->

@@ -1,0 +1,31 @@
+<!--AJAX-->
+
+<!--get요청-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    axios.get('https://www.zerocho.com/api/get') 
+        .then((result) => {
+            console.log(result);
+            console.log(result.data);
+        })
+        .catch((error) => {
+            console.error(error);
+        })
+</script>
+
+<!--POST요청 두번째 인수로 데이터를 넣어 보낸다. GET요청 - axios.get을 사용, POST요청 - axios.post사용-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    (async () => {
+        try {
+            const result=await axios.post('https://www.zerocho.com/api/post/json', {
+                name: 'zerocho',
+                birth: 1994,
+            });
+            console.log(result);
+            console.log(result.data);
+        } catch(error) {
+            console.error(error);
+        }
+    })();
+</script>

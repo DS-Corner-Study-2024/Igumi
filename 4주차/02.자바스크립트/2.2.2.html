@@ -1,0 +1,21 @@
+<!--FormData: form 태그의 데이터를 동적으로 제어할 수 있는 기능-->
+<!--has메서드는 주어진 키에 해당하는 값이 있는지 확인(true, false)/ get메서드: 주어진 키에 해당하는 값 하나 가져옴
+/getAll메서드: 해당하는 값 모두 가져옴/ delete메서드: 현재 키 제거/ set메서드: 현재 키 수정-->
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    (async () => {
+        try {
+            const formData = new FormData();
+            formData.append('name', 'zerocho');
+            formData.append('birth', 1994);
+            const result=await axios.post('https://www.zerocho.com/api/post/formdata', formData);
+
+            console.log(result);
+            console.log(result.data);
+        } catch(error) {
+            console.error(error);
+        }
+    })();
+</script>
+
