@@ -1,0 +1,30 @@
+-const, let
+const: 재할당 불가, 상수 선언
+=>변수 선언 시 기본적으로 const, 다른 값 할당해야 할 상황에는 let
+
+-템플릿 문자열
+const num3=1;
+const num4=2;
+const result2=3;
+const string=`${num3} 더하기 ${num4}는 '${result2}'`;
+console.log(string);
+
+-객체 리터럴: 객체에 동적으로 속성 추가 가능
+ex.oldObject[es+6];
+=>코딩의 편의성 향상
+
+-화살표 함수
+const add4 = (x,y) => x+y;
+.forEach();
+
+-구조 분해 할당
+var getCandy=candyMachine.getCandy;
+var count=candyMachine.status.count;
+위와 같은
+const {getCandy, status: {count}}=candyMachine;
+
+const array=['nodejs',{},10,true];
+const [node, obj, , bool]=array;(==)var node=array[0]; var obj=array[1]; var bool=array[3];
+
+-클래스
+생성자 함수: constructor
