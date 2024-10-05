@@ -1,0 +1,10 @@
+process 객체는 현재 실행되고 있는 노드 프로세스에 대한 정보를 담고 있다. 
+
+.version .arch .platform .pid .uptime() .execPath .cwd() .cpuUsage()
+
+-process.env: 시스템의 환경변수
+임의로 환경 변수 저장 가능
+서버의 중요한 키를 저장하는 공간
+중요한 비밀번호는 process.env의 속성으로 대체
+
+const secreId=process.env.SECRET_ID;
