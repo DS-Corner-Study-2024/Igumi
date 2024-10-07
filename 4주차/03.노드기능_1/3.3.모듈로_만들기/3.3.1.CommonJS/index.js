@@ -9,6 +9,6 @@ function checkStringOddOrEven(str) {
 }
 
 console.log(checkNumber(10));
-console.log(checkStringOddOrEven('hello'));
+console.log(checkStringOddOrEven('node.js_team2'));
 
 /*모듈 여러 개 참조 가능, 하나의 모듈 여러번 사용 가능*/
