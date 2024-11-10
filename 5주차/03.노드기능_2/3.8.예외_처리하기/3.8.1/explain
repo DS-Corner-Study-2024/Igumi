@@ -1,0 +1,5 @@
+node: command not found: 환경 변수 설정과 관련된
+ReferenceError: 모듈을 require 했는지 확인하기
+Error: Cannot find module 모듈명
+Error [ERR_MODULE_NOT_FOUND]
+등이 있다. 책 참고
