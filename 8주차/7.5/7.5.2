@@ -1,0 +1,14 @@
+Read(조회)
+
+-SELECT * FROM [테이블명];
+* 대신 특정 컬럼을 넣어 조회 가능
+
+-WHERE 절을 사용해 특정 조건을 가진 데이터 조회 가능
+ex> select name, age from nodejs.users where married =1 and a
+ge>30;
+
+-정렬
+ORDER BY [컬럼명] [ASC|DESC]
+ex> SELECT id, name FROM nodejs.users ORDER BY age DESC;
+조회할 로우 개수 설정 'LIMIT [숫자]'를 끝에 붙여주기
+OFFSET [건너뛸 숫자]
