@@ -1,0 +1,33 @@
+/*
+1. 데이터베이스
+2. DESC users;
+3. CRUD
+4. npm start
+5. 시퀄라이즈
+6. 1:N   
+7. JSON
+*/
+
+//8
+/*
+INSERT INTO nodejs.users (name, age, married, comment) VALUES ('hh', 21, 0, '자기소개1');
+INSERT INTO nodejs.users (name, age, married, comment) VALUES ('dd', 25, 0, '자기소개2');
+*/
+
+//9
+const express = require('express');
+const User=require('../models/user');
+
+const router=express.Router();
+
+router.get('/', async (req,res, next) => {
+    try {
+        const users=await User.(1, findAll());
+        res.render('sequelize', {users});
+    }catch (err) {
+        console.error(err);
+        next(err);
+    }
+});
+
+module.exports=router;

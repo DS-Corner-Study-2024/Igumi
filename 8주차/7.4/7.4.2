@@ -1,0 +1,61 @@
+-사용자 정보 테이블 만들기
+CREATE TABLE nodejs.users (     
+    -> id INT NOT NULL AUTO_INCREMENT,                          
+    -> name VARCHAR(20) NOT NULL,                               
+    -> age INT UNSIGNED NOT NULL,
+    -> married TINYINT NOT NULL,  
+    -> comment TEXT NULL,         
+    -> created_at DATETIME NOT NULL DEFAULT now(),
+    -> PRIMARY KEY(id),
+    -> UNIQUE INDEX name_UNIQUE (name(ASC))
+    -> COMMENT = '사용자 정보'
+    -> ENGINE = InnoDB;
+
+오타 주의!
+CREATE TABLE nodejs.users ->nodejs 데이터베이스 내에 users 테이블을 생성
+한 줄씩 입력해 컬럼을 만든다. 
+
+-자료형
+INT(정수형), VARCHAR(자릿수), TINYINT, TEXT(긴 글 저장시), DATETIME(날짜와 시간) 등의 자료형을 적는다.
+
+-컬럼에 대한 설정
+NOT NULL(빈칸 허용하지 않음), NULL(빈칸 허용), 
+UNSIGNED(음수 무시), AUTO_INCREMENT(숫자를 저절로 올림), 
+ZEROFILL(숫자의 자릿수가 고전되어 있을 때-비어있는 자리에 모두 0)
+DEFAULT(기본값),
+PRIMARY KEY(기본키-고유한 식별자),
+UNIQUE INDEX(해당 값이 고유해야 함) 등의 옵션을 붙인다.
+
+-테이블 자체에 대한 설정
+COMMENT(테이블 보충 설명), ENGINE
+
+-테이블 확인 명령
+DESE 테이블명;
+
+-테이블 제거 명령
+DROP TABLE 테이블명;
+
+-댓글 저장 테이블
+CREATE TABLE nodejs.comments (
+    -> id INT NOT NULL AUTO_INCREMENT,
+    -> commenter INT NOT NULL,
+    -> comment VARCHAR(100) NOT NULL,
+    -> created_at DATETIME NOT NULL DEFAULT now(),
+    -> PRIMARY KEY(id),
+    -> INDEX commenter_idx (commenter ASC),
+    -> CONSTRAINT commenter
+    -> FOREIGN KEY (commenter)
+    -> REFERENCES nodejs.users (id)
+    -> ON DELETE CASCADE
+    -> ON UPDATE CASCADE)
+    -> comment = '댓글'
+    -> ENGINE=InnoDB;
+
+-다른 테이블의 기본키를 저장하는 컬럼: 외래키(foreign key)
+CONSTRAINT [제약조건명] FOREIGN KEY [컬럼명] REFERENCES [참고하는 컬럼명]
+CASCADE: 사용자 정보가 수정되거나 삭제되면 그것과 연결된 댓글 정보도 같이 수정하거나 삭제
+
+-테이블 확인
+SHOW TABLES;
+
+
